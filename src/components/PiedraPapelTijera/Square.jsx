@@ -8,8 +8,8 @@ export const Square = ({ children, updateBoard, index, winner }) => {
   return (
     <div 
       onClick={handleClick} 
-      className={`w-16 h-16 rounded-md grid items-center justify-center cursor-pointer text-2xl
-      border-4 border-red-maroon md:w-24 md:h-24 md:text-5xl ${winner && winnerCombo.includes(index) && 'bg-red-900'}`}>
+      className={`w-24 h-24 grid items-center justify-center cursor-pointer text-3xl
+      border-2 border-red-maroon md:w-28 md:h-28 md:text-5xl ${winner && winnerCombo.includes(index) && 'bg-red-900'}`}>
       {children}
     </div>
   )

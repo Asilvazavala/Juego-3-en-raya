@@ -2,7 +2,7 @@ import { PiedraPapelTijera } from './components/PiedraPapelTijera/PiedraPapelTij
 
 function App() {
   return (
-    <main className='h-screen bg-gradient-to-b from-orange-light to-maroon'>
+    <main className=''>
       <PiedraPapelTijera />
     </main>
   )

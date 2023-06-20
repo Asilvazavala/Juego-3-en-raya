@@ -26,7 +26,8 @@ export const PiedraPapelTijera = () => {
     
   const resetGame = () => {
     setBoard(Array(9).fill(null))
-    setTurn(turns.X)
+    let chosenTurn = Math.random() <= 0.5 ? turns.X : turns.O;
+    setTurn(chosenTurn)
     setWinner(null)
     winnerCombo.length = 0
     removeLocalStorage()
@@ -82,14 +83,15 @@ export const PiedraPapelTijera = () => {
     const newTurn = turn === turns.X ? turns.O : turns.X
     if (newBoard.every(el => el !== null)) return
 
-    if (isActiveCPU && turn === turns.O) {
-      const randomIndex = Math.floor(Math.random() * 9)
-      if (newBoard[randomIndex] === null) {
-        changeBoardCPU(newBoard, newTurn, randomIndex)
+      if (isActiveCPU && turn === turns.O) {
+        const randomIndex = Math.floor(Math.random() * 9)
+        if (newBoard[randomIndex] === null) {
+          changeBoardCPU(newBoard, newTurn, randomIndex)
         } else {
             updateBoardCPU()
           }
       }
+
   }, [board, isActiveCPU, turn, winner, changeBoardCPU])
 
   useEffect(() => {
